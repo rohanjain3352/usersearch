@@ -41,6 +41,15 @@ class User(ModelBase):
     score = models.FloatField()
     picture = models.CharField(max_length=508, blank=True, null=True)
 
+    def __unicode__(self):
+        return self.login
+
+    def get_login(self):
+        login = self.login
+        if self.login:
+            return login
+        return self.login
+
 
 class SearchKeys(ModelBase):
     """

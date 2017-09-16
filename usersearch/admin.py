@@ -8,6 +8,7 @@ class UserAdmin(admin.ModelAdmin):
 
     search_fields = ['login','created_at']
     list_display = ('login',)
+    list_filter = ['score', 'type']
 
 admin.site.register(SearchKeys)
 admin.site.register(User, UserAdmin)
